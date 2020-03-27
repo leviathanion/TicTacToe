@@ -1,8 +1,10 @@
+package com.testthree.java;
+
 public class PrintMat {
     private int[][] board_mat;//棋盘矩阵
 
     public void print_chessboard(){
-        //board_mat=GameDriver.mat;
+        //board_mat=com.testthree.java.GameDriver.mat;
         System.out.println("  1 2 3");
         for(int i = 0; i < 3; i++){
             for(int j = 0; j < 3; j++){

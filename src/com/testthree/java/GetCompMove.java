@@ -1,3 +1,5 @@
+package com.testthree.java;
+
 import java.util.ArrayList;
 public class GetCompMove {
     private static int[] getComMoveResult=new int[2];	//该返回的坐标
