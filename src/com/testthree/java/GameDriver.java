@@ -28,9 +28,8 @@ public class GameDriver {
          this.gcm=new GetCompMove();
          r=c=0;
          numMoves=0;
-         pt.print_chessboard();
+         pt.printMat();
          System.out.println("\nEnter position like \"r,c\" to move,or \"exit\" to exit");
-         System.out.print(mat);
          while(exitFlag!=1){
              numMoves=numMoves+1;
              if(numMoves>9){
@@ -44,8 +43,8 @@ public class GameDriver {
                  c=gcmResult[1];
                  mat[r][c]=1;  //x是1
                  System.out.println("\nOkay,my move...");
-                 pt.print_chessboard();
-                 if (TestWayAndWin.testWin(r,c)==true) {
+                 pt.printMat();
+                 if (TestWayAndWin.testWin(r,c)) {
                     System.out.println("\nX WIN THE GAME!");
                     break;
                 }
@@ -55,7 +54,7 @@ public class GameDriver {
                  exitFlag=gmResult[0];
                  r=gmResult[1];
                  c=gmResult[2];
-                 if(exitFlag==0&&TestWayAndWin.testWin(r,c)==true){
+                 if(exitFlag==0&&TestWayAndWin.testWin(r,c)){
                      System.out.println("\\nO WIN THE GAME!");
                      break;
                  }

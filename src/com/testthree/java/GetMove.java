@@ -40,7 +40,7 @@ public class GetMove {
                    }
                    else{
                        GameDriver.mat[r][c]=2;
-                       pm.print_chessboard();
+                       pm.printMat();
                        break;
                    }
 
