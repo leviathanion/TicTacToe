@@ -1,7 +1,7 @@
 package com.testthree.java;
 
 public class PrintMat {
-    private int[][] board_mat;//棋盘矩阵
+    //private int[][] board_mat;//棋盘矩阵
 
     public void printMat(){
         //board_mat=com.testthree.java.GameDriver.mat;
