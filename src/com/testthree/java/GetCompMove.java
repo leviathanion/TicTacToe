@@ -42,14 +42,14 @@ public class GetCompMove {
             }
         }
 
-        /*检查每个单元格，看它能否让敌方立即获胜
+        //检查每个单元格，看它能否让敌方立即获胜
         for(int i=0;i<cellList.size();i++) {
             if(TestToBlock.testToBlock(cellList.get(i)[0],cellList.get(i)[1])) {
                 getComMoveResult[0]=cellList.get(i)[0];
                 getComMoveResult[1]=cellList.get(i)[1];
                 return getComMoveResult;
             }
-        }*/
+        }
 
         //棋子落子的优先队列
         for(int i=0;i<9;i++) {
