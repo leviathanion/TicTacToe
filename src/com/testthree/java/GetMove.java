@@ -12,8 +12,9 @@ public class GetMove {
            this.pm=new PrintMat();
        }
 
-       public int[] getMove(String input){
+       public int[] getMove(){
            while(true){
+               String input=GetInput.getInput();
                String[] content_list = input.split(",");
                if(content_list.length >= 1&&content_list[0].equals("exit"))  //输入为exit
                {

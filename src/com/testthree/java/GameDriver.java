@@ -8,7 +8,7 @@ public class GameDriver {
          private GetMove gm;
          private int exitFlag;
          public int n=3;
-         public static int [][] mat;
+         public static  int [][] mat={{0, 0, 0}, {0, 0, 0}, {0, 0, 0}};
          private int numMoves;
          private int r,c;
          private int cellNum;
@@ -19,8 +19,7 @@ public class GameDriver {
     public GameDriver(){
          this.pt=new PrintMat();
          this.exitFlag=0;
-         mat= new int[][]{{0, 0, 0}, {0, 0, 0}, {0, 0, 0}};
-
+         //mat= new int[][]{{0, 0, 0}, {0, 0, 0}, {0, 0, 0}};
         }
 
     public  void gameDriver (){
@@ -50,7 +49,7 @@ public class GameDriver {
                 }
              }
              else if (numMoves%2==0){
-                 gmResult=gm.getMove(GetInput.getInput());
+                 gmResult=gm.getMove();
                  exitFlag=gmResult[0];
                  r=gmResult[1];
                  c=gmResult[2];
