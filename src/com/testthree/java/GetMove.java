@@ -11,12 +11,10 @@ public class GetMove {
        public GetMove(){
            this.pm=new PrintMat();
        }
-       public int[] getMove(){
+
+       public int[] getMove(String input){
            while(true){
-               System.out.print("\nEnter move or  \"exit\" :");
-               Scanner input = new Scanner(System.in);
-               String content = input.next();
-               String[] content_list = content.split(",");
+               String[] content_list = input.split(",");
                if(content_list.length >= 1&&content_list[0].equals("exit"))  //输入为exit
                {
                    System.out.println("Bye now");
@@ -51,6 +49,8 @@ public class GetMove {
            result[2]=c;
            return result;
        }
+
+
 
 
 }

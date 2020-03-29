@@ -50,7 +50,7 @@ public class GameDriver {
                 }
              }
              else if (numMoves%2==0){
-                 gmResult=gm.getMove();
+                 gmResult=gm.getMove(GetInput.getInput());
                  exitFlag=gmResult[0];
                  r=gmResult[1];
                  c=gmResult[2];
