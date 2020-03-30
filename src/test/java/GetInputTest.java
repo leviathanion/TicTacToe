@@ -40,7 +40,7 @@ public class GetInputTest {
         String data = this.input;
         InputStream stdin = System.in;
         System.setIn(new ByteArrayInputStream(data.getBytes()));
-         String result=GetInput.getInput();
+        String result=GetInput.getInput();
         System.setIn(stdin);
         assertEquals(this.expected,result);
     }
