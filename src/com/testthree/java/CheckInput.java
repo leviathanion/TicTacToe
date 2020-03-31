@@ -7,8 +7,8 @@ public class CheckInput {
 
     public  static int checkInput(String input){
         String[] content_list = input.split(",");
-        if(content_list.length < 2){
-            return 0;      //位数不够
+        if(content_list.length!=2){
+            return 0;      //位数不对
         }
         else {
             r = Integer.parseInt(content_list[0])-1;    //字符串到整形转换
@@ -17,6 +17,6 @@ public class CheckInput {
                 return 1; //越界
             }
         }
-     return 3;
+     return 3;  //没有以上情况
     }
 }
