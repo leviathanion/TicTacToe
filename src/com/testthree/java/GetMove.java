@@ -24,7 +24,7 @@ public class GetMove {
                 result[2] = 0;  //c
                 return result;
             }
-            else if (CheckInput.checkInput(input)==0)     //输入位数不够
+            else if (CheckInput.checkInput(input)==0)     //输入位数不对
             {
                 System.out.println("Use row,col.Re-enter");
             }
@@ -46,7 +46,6 @@ public class GetMove {
             }
 
         }
-
         result[0] = 0;
         result[1] = r;
         result[2] = c;
