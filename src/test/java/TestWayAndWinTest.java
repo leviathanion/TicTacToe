@@ -1,26 +1,12 @@
 package test.java;
 
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
+import org.junit.runners.Suite;
 
 import static org.junit.Assert.*;
-
+@RunWith(Suite.class)
+@Suite.SuiteClasses({TestWayTest.class,TestWinTest.class})
 public class TestWayAndWinTest {
 
-    @Before
-    public void setUp() throws Exception {
-    }
-
-    @After
-    public void tearDown() throws Exception {
-    }
-
-    @Test
-    public void testWay() {
-    }
-
-    @Test
-    public void testWin() {
-    }
 }

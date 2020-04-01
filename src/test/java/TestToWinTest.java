@@ -26,7 +26,7 @@ public class TestToWinTest {
         this.expected = expected;
     }
 
-    @Parameterized.Parameters(name = "{index}:testToWin[{0},{1},{2}]=[3]")
+    @Parameterized.Parameters(name = "{index}:testToWin[{0},{1}]={3}")
     public static Collection testDataSet(){
         return Arrays.asList(
                 new Object[][]{
