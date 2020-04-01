@@ -75,7 +75,7 @@ public class ChessBoard {
         }
     }
 
-    //对应TestWayAndWin.testToWin()
+    //对应TestWayAndWin.testWin()
     public boolean testAnyOneWin(){
         int cellN = row * 3 + col + 1; //格子号
         /*  1 2 3
@@ -91,7 +91,7 @@ public class ChessBoard {
         return false;
     }
 
-    //从TestWayAndWin.testToWin()中提取出来
+    //从TestWayAndWin.testWin()中提取出来
     public List<int[]> getMyWinList(int cellN){
         List <int[]> myWinList = new ArrayList<>();
         for(int[] list : this.WINLIST){
@@ -105,7 +105,25 @@ public class ChessBoard {
         return myWinList;
     }
 
-    //对应TestToWin.testToWin()和TestToBlock.testToBlock()
+    //对应TestToWin.testToWin()
+    public boolean testToWin(int r, int c){
+        for (int[] tttList : getMyWinList(r * 3 + c + 1)) {
+            if(testWay(tttList)[1] == 2)
+                return true;
+        }
+        return false;
+    }
+
+    //对应TestToWin.testToBlock()
+    public boolean testToBlock(int r, int c){
+        for (int[] tttList : getMyWinList(r * 3 + c + 1)) {
+            if(testWay(tttList)[2] == 2)
+                return true;
+        }
+        return false;
+    }
+
+    //对TestToWin.testToWin()和TestToBlock.testToBlock()进行重构
     public boolean whoToWin(int r, int c, int chessMan){
 
         for (int[] tttList : getMyWinList(r * 3 + c + 1)) {

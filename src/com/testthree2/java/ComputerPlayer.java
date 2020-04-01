@@ -33,7 +33,7 @@ public class ComputerPlayer {
 
         //检查每个单元格，看它能否让我方立即获胜
         for(int i=0; i<cellList.size(); i++) {
-            if(cb.whoToWin(cellList.get(i)[0],cellList.get(i)[1],1)) {
+            if(cb.testToWin(cellList.get(i)[0],cellList.get(i)[1])) {
                 cb.changeMat(cellList.get(i)[0],cellList.get(i)[1],1);
                 return ;
             }
@@ -41,7 +41,7 @@ public class ComputerPlayer {
 
         //检查每个单元格，看它能否让敌方立即获胜
         for(int i=0; i<cellList.size(); i++) {
-            if(cb.whoToWin(cellList.get(i)[0],cellList.get(i)[1],2)) {
+            if(cb.testToBlock(cellList.get(i)[0],cellList.get(i)[1])) {
                 cb.changeMat(cellList.get(i)[0],cellList.get(i)[1],1);
                 return ;
             }
