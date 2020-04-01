@@ -130,13 +130,27 @@ public class ChessBoard {
         return numOfChessman;
     }
 
-    public int[][] getMat(){
-        return this.mat;
-    }
-
-    public void setMat(int row, int col, int chessMan) {
+    //落子
+    public void changeMat(int row, int col, int chessMan) {
         this.row = row;
         this.col = col;
         this.mat[row][col] = chessMan;
     }
+
+    public int[][] getMat(){
+        return this.mat;
+    }
+
+    public void setMat(int[][] mat){
+        this.mat = mat;
+    }
+
+    public void setRow(int row){
+        this.row = row;
+    }
+
+    public void setCol(int col){
+        this.col = col;
+    }
+
 }

@@ -18,7 +18,7 @@ public class ComputerPlayer {
         //如果这是第3步，且对手第2步下在边上，就下在中央
         if(3 == numMoves)
             if(2 == oppCell || 4 == oppCell || 6 == oppCell || 8 == oppCell) {
-                cb.setMat(1,1,1);
+                cb.changeMat(1,1,1);
                 return;
             }
 
@@ -34,7 +34,7 @@ public class ComputerPlayer {
         //检查每个单元格，看它能否让我方立即获胜
         for(int i=0; i<cellList.size(); i++) {
             if(cb.whoToWin(cellList.get(i)[0],cellList.get(i)[1],1)) {
-                cb.setMat(cellList.get(i)[0],cellList.get(i)[1],1);
+                cb.changeMat(cellList.get(i)[0],cellList.get(i)[1],1);
                 return ;
             }
         }
@@ -42,7 +42,7 @@ public class ComputerPlayer {
         //检查每个单元格，看它能否让敌方立即获胜
         for(int i=0; i<cellList.size(); i++) {
             if(cb.whoToWin(cellList.get(i)[0],cellList.get(i)[1],2)) {
-                cb.setMat(cellList.get(i)[0],cellList.get(i)[1],1);
+                cb.changeMat(cellList.get(i)[0],cellList.get(i)[1],1);
                 return ;
             }
         }
@@ -52,7 +52,7 @@ public class ComputerPlayer {
             int r = (prefix[i]-1)/3;
             int c = (prefix[i]-1)%3;
             if(cb.getMat()[r][c]==0) {
-                cb.setMat(r, c,1);
+                cb.changeMat(r, c,1);
                 return ;
             }
         }

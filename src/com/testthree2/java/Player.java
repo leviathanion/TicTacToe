@@ -35,7 +35,7 @@ public class Player {
                     System.out.println("Occupied,re-enter");
                 }
                 else {
-                    cb.setMat(row, col, 2);
+                    cb.changeMat(row, col, 2);
                     cb.printMat();
                     break;
                 }
