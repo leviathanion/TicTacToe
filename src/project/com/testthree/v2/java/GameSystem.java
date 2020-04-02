@@ -8,12 +8,21 @@ import java.util.Scanner;
 
 public class GameSystem {
 
-    private boolean exitFlag;//退出标志
-    private ChessBoard cb;  //棋盘
-    private ComputerPlayer cp;//电脑玩家
-    private Player player;  //玩家
-    private int numMoves;   //回合
+    private boolean exitFlag;
+    //退出标志
+    private ChessBoard cb;
+    //棋盘
+    private ComputerPlayer cp;
+    //电脑玩家
+    private Player player;
+    //玩家
+    private int numMoves;
+    //回合
     private int modeFlag;
+    private int pveFlag=1;
+    private int pvpFlag=2;
+    String pveOption="1";
+    String pvpOption="2";
 
     public GameSystem(){
         this.exitFlag = false;
@@ -23,21 +32,27 @@ public class GameSystem {
         this.numMoves = 0;
     }
 
-    //对应GameDriver.gameDriver()
+    /**对应GameDriver.gameDriver()*/
     public void start(){
         System.out.println("Welcome!");
-        modeFlag=chooseMode();
-        if(modeFlag==1){
-            pVe();
-        }
-        else if (modeFlag==2){
-            //pVp()
+        while(true){
+            modeFlag=chooseMode();
+            if(modeFlag==pveFlag){
+                pVe();
+            }
+            else if (modeFlag==pvpFlag){
+                //pVp()
+            }
+            else{
+                System.out.println("Please re-enter");
+            }
         }
 
 
     }
 
     public void pVe(){
+        System.out.println("This is PvE mode now.");
         cb.printMat();
         System.out.println("\nEnter position like \"r,c\" to move,or \"exit\" to exit");
 
@@ -69,16 +84,15 @@ public class GameSystem {
         }
     }
 
-
     public int chooseMode(){
         System.out.println("Please choose moode!");
         System.out.println("1:PVE  2:PVP");
         Scanner input = new Scanner(System.in);
         String content = input.next();
-        if ("1".equals(content)){
+        if (pveOption.equals(content)){
             return 1;
         }
-        else if ("2".equals(content)){
+        else if (pvpOption.equals(content)){
             return 2;
         }
         return 3;
