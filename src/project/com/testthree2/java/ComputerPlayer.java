@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class ComputerPlayer {
 
     private int chessMan;//棋子类型，1为X，2为O
-    private int[] prefix=new int[] {1,9,3,7,5,2,4,6,8}; //电脑优先落子顺序
+    private static final int[] PREFIX=new int[] {1,9,3,7,5,2,4,6,8}; //电脑优先落子顺序
 
     public ComputerPlayer(){
         this.chessMan = 1;//电脑玩家棋子默认为X
@@ -19,6 +19,8 @@ public class ComputerPlayer {
         if(3 == numMoves)
             if(2 == oppCell || 4 == oppCell || 6 == oppCell || 8 == oppCell) {
                 cb.changeMat(1,1,1);
+                System.out.println("\nOkay,my move...");
+                cb.printMat();
                 return;
             }
 
@@ -35,6 +37,8 @@ public class ComputerPlayer {
         for(int i=0; i<cellList.size(); i++) {
             if(cb.testToWin(cellList.get(i)[0],cellList.get(i)[1])) {
                 cb.changeMat(cellList.get(i)[0],cellList.get(i)[1],1);
+                System.out.println("\nOkay,my move...");
+                cb.printMat();
                 return ;
             }
         }
@@ -43,16 +47,20 @@ public class ComputerPlayer {
         for(int i=0; i<cellList.size(); i++) {
             if(cb.testToBlock(cellList.get(i)[0],cellList.get(i)[1])) {
                 cb.changeMat(cellList.get(i)[0],cellList.get(i)[1],1);
+                System.out.println("\nOkay,my move...");
+                cb.printMat();
                 return ;
             }
         }
 
         //棋子落子的优先队列
         for(int i=0; i<9; i++) {
-            int r = (prefix[i]-1)/3;
-            int c = (prefix[i]-1)%3;
+            int r = (PREFIX[i]-1)/3;
+            int c = (PREFIX[i]-1)%3;
             if(cb.getMat()[r][c]==0) {
                 cb.changeMat(r, c,1);
+                System.out.println("\nOkay,my move...");
+                cb.printMat();
                 return ;
             }
         }

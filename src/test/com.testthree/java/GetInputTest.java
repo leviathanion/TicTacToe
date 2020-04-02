@@ -1,4 +1,4 @@
-package test.java;
+package com.testthree.java;
 
 import com.testthree.java.GetInput;
 import org.junit.Test;

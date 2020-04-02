@@ -1,4 +1,4 @@
-package test.java;
+package com.testthree.java;
 
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;

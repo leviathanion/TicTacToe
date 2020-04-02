@@ -1,6 +1,6 @@
 package com.testthree2.java;
 
-public class TTTGameSystem {
+public class GameSystem {
 
     private boolean exitFlag;//退出标志
     private ChessBoard cb;  //棋盘
@@ -8,7 +8,7 @@ public class TTTGameSystem {
     private Player player;  //玩家
     private int numMoves;   //回合
 
-    public TTTGameSystem(){
+    public GameSystem(){
         this.exitFlag = false;
         this.cb = new ChessBoard();
         this.cp = new ComputerPlayer();
@@ -31,8 +31,7 @@ public class TTTGameSystem {
             if (numMoves % 2 > 0){
                 //电脑移动
                 cp.move(numMoves,player.getRow() * 3 + player.getCol() + 1, cb);
-                System.out.println("\nOkay,my move...");
-                cb.printMat();
+
                 if (cb.testAnyOneWin()) {
                     System.out.println("\nX WIN THE GAME!");
                     break;
@@ -41,6 +40,7 @@ public class TTTGameSystem {
             else if (numMoves % 2 == 0){
                 //玩家移动
                 exitFlag = player.move(cb);
+
                 if(!exitFlag&&cb.testAnyOneWin()){
                     System.out.println("\\nO WIN THE GAME!");
                     break;

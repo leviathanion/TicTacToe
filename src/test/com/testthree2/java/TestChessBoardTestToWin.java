@@ -1,6 +1,5 @@
-package test2.java;
+package com.testthree2.java;
 
-import com.testthree.java.TestToWin;
 import com.testthree2.java.ChessBoard;
 import org.junit.After;
 import org.junit.Before;

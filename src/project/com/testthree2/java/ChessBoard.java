@@ -10,7 +10,7 @@ public class ChessBoard {
 
     private int[][] mat;//棋盘矩阵，空为0，X为1，O为2
     private int row,col;//记录上一步棋
-    public int[][] WIN_LIST ={{1,2,3},{4,5,6},{7,8,9},{1,4,7},{2,5,8},{3,6,9},{1,5,9},{3,5,7}};   //这个是常量，忽略代码规范提示即可
+    private static final int[][] WIN_LIST ={{1,2,3},{4,5,6},{7,8,9},{1,4,7},{2,5,8},{3,6,9},{1,5,9},{3,5,7}};   //这个是常量，忽略代码规范提示即可
 
     public ChessBoard(){
         this.mat = new int[][]{{0, 0, 0}, {0, 0, 0}, {0, 0, 0}};
