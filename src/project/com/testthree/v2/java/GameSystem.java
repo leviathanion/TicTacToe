@@ -1,8 +1,8 @@
 package com.testthree.v2.java;
 
-import com.testthree2.v1.refactored.java.ChessBoard;
-import com.testthree2.v1.refactored.java.ComputerPlayer;
-import com.testthree2.v1.refactored.java.Player;
+import com.testthree.v1.refactored.java.ChessBoard;
+import com.testthree.v1.refactored.java.ComputerPlayer;
+import com.testthree.v1.refactored.java.Player;
 
 import java.util.Scanner;
 
