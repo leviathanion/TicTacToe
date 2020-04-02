@@ -10,7 +10,7 @@ public class ChessBoard {
 
     private int[][] mat;//棋盘矩阵，空为0，X为1，O为2
     private int row,col;//记录上一步棋
-    public int[][] WINLIST ={{1,2,3},{4,5,6},{7,8,9},{1,4,7},{2,5,8},{3,6,9},{1,5,9},{3,5,7}};
+    public int[][] WIN_LIST ={{1,2,3},{4,5,6},{7,8,9},{1,4,7},{2,5,8},{3,6,9},{1,5,9},{3,5,7}};
 
     public ChessBoard(){
         this.mat = new int[][]{{0, 0, 0}, {0, 0, 0}, {0, 0, 0}};
@@ -82,7 +82,7 @@ public class ChessBoard {
             4 5 6
             7 8 9   */
 
-        for (int[] tttList : getMyWinList(cellN)) {
+        for (int[] tttList : getMyWIN_LIST(cellN)) {
             int numX = testWay(tttList)[0];
             int numO = testWay(tttList)[1];
             if(numX == 3 || numO == 3)
@@ -92,22 +92,22 @@ public class ChessBoard {
     }
 
     //从TestWayAndWin.testWin()中提取出来
-    public List<int[]> getMyWinList(int cellN){
-        List <int[]> myWinList = new ArrayList<>();
-        for(int[] list : this.WINLIST){
+    public List<int[]> getMyWIN_LIST(int cellN){
+        List <int[]> myWIN_LIST = new ArrayList<>();
+        for(int[] list : this.WIN_LIST){
             if(Arrays
                     .stream(list)
                     .boxed()
                     .collect(Collectors.toList())
                     .contains(cellN))
-                myWinList.add(list);
+                myWIN_LIST.add(list);
         }
-        return myWinList;
+        return myWIN_LIST;
     }
 
     //对应TestToWin.testToWin()
     public boolean testToWin(int r, int c){
-        for (int[] tttList : getMyWinList(r * 3 + c + 1)) {
+        for (int[] tttList : getMyWIN_LIST(r * 3 + c + 1)) {
             if(testWay(tttList)[1] == 2)
                 return true;
         }
@@ -116,7 +116,7 @@ public class ChessBoard {
 
     //对应TestToWin.testToBlock()
     public boolean testToBlock(int r, int c){
-        for (int[] tttList : getMyWinList(r * 3 + c + 1)) {
+        for (int[] tttList : getMyWIN_LIST(r * 3 + c + 1)) {
             if(testWay(tttList)[2] == 2)
                 return true;
         }
@@ -126,7 +126,7 @@ public class ChessBoard {
     //对TestToWin.testToWin()和TestToBlock.testToBlock()进行重构
     public boolean whoToWin(int r, int c, int chessMan){
 
-        for (int[] tttList : getMyWinList(r * 3 + c + 1)) {
+        for (int[] tttList : getMyWIN_LIST(r * 3 + c + 1)) {
             if(testWay(tttList)[chessMan] == 2)
                 return true;
         }
