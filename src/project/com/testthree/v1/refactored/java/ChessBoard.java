@@ -6,6 +6,8 @@ import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import static com.testthree.v1.refactored.java.Constants.*;
+
 public class ChessBoard {
 
     private int[][] mat;//棋盘矩阵，空为0，X为1，O为2
@@ -86,8 +88,8 @@ public class ChessBoard {
             7 8 9   */
 
         for (int[] tttList : getMyWinlist(cellN)) {
-            int numX = testWay(tttList)[0];
-            int numO = testWay(tttList)[1];
+            int numX = testWay(tttList)[CHESSMAN_X];
+            int numO = testWay(tttList)[CHESSMAN_O];
             if(numX == 3 || numO == 3) {
                 return true;
             }
@@ -113,7 +115,7 @@ public class ChessBoard {
     //对应TestToWin.testToWin()
     public boolean testToWin(int r, int c){
         for (int[] tttList : getMyWinlist(r * 3 + c + 1)) {
-            if(testWay(tttList)[1] == 2) {
+            if(testWay(tttList)[CHESSMAN_X] == 2) {
                 return true;
             }
         }
@@ -123,7 +125,7 @@ public class ChessBoard {
     //对应TestToWin.testToBlock()
     public boolean testToBlock(int r, int c){
         for (int[] tttList : getMyWinlist(r * 3 + c + 1)) {
-            if(testWay(tttList)[2] == 2) {
+            if(testWay(tttList)[CHESSMAN_O] == 2) {
                 return true;
             }
         }
@@ -149,9 +151,9 @@ public class ChessBoard {
             int c = (cellN - 1) % 3;
             lettersList.add(this.mat[r][c]);
         }
-        int numX = Collections.frequency(lettersList,1);
-        int numO = Collections.frequency(lettersList,2);
-        int numBlank = Collections.frequency(lettersList,0);
+        int numX = Collections.frequency(lettersList,CHESSMAN_X);
+        int numO = Collections.frequency(lettersList,CHESSMAN_O);
+        int numBlank = Collections.frequency(lettersList,CHESSMAN_BLANK);
         int[] numOfChessman = {numBlank,numX,numO};
         return numOfChessman;
     }

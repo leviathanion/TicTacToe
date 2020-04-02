@@ -83,7 +83,7 @@ public class GameSystem {
                 cp.move(numMoves, defaultPlayer.getRow() * 3 + defaultPlayer.getCol() + 1, cb);
 
                 if (cb.testAnyOneWin()) {
-                    System.out.println("\nX WIN THE GAME!");
+                    System.out.println("\n X WIN THE GAME!");
                     break;
                 }
             }
@@ -92,7 +92,7 @@ public class GameSystem {
                 exitFlag = defaultPlayer.move(cb);
 
                 if(!exitFlag&&cb.testAnyOneWin()){
-                    System.out.println("\\nO WIN THE GAME!");
+                    System.out.println("\n O WIN THE GAME!");
                     break;
                 }
 
@@ -127,7 +127,7 @@ public class GameSystem {
                 exitFlag = defaultPlayer.move(cb);
 
                 if(!exitFlag&&cb.testAnyOneWin()){
-                    System.out.println("\\nO WIN THE GAME!");
+                    System.out.println("\nO WIN THE GAME!");
                     break;
                 }
 
