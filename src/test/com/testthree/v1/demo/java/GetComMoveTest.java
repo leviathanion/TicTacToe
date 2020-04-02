@@ -67,6 +67,7 @@ public class GetComMoveTest {
 
     @After
     public void tearDown() throws Exception {
+		GameDriver.mat= new int[][]{{0, 0, 0}, {0, 0, 0}, {0, 0, 0}};
     }
 	@Test
 	public void getComMoveTest() {
