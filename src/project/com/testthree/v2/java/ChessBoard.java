@@ -90,7 +90,7 @@ public class ChessBoard {
             4 5 6
             7 8 9   */
         int cellN = row * 3 + col + 1;
-        for (int[] tttList : getMyWinlist(cellN)) {
+        for (int[] tttList : getMyWinList(cellN)) {
             int numX = testWay(tttList)[CHESSMAN_X];
             int numO = testWay(tttList)[CHESSMAN_O];
             if(numX == 3 || numO == 3) {
@@ -105,7 +105,7 @@ public class ChessBoard {
      * @return 包含该点的获胜序列
      * @description 通过给定某点格子号，求得包含该点的获胜序列
      */
-    public List<int[]> getMyWinlist(int cellN){
+    public List<int[]> getMyWinList(int cellN){
         List <int[]> myWinlist = new ArrayList<>();
         for(int[] list : WIN_LIST){
             if(Arrays
@@ -121,7 +121,7 @@ public class ChessBoard {
 
     //对应TestToWin.testToWin()
     public boolean testToWin(int r, int c){
-        for (int[] tttList : getMyWinlist(r * 3 + c + 1)) {
+        for (int[] tttList : getMyWinList(r * 3 + c + 1)) {
             if(testWay(tttList)[CHESSMAN_X] == 2) {
                 return true;
             }
@@ -131,7 +131,7 @@ public class ChessBoard {
 
     //对应TestToWin.testToBlock()
     public boolean testToBlock(int r, int c){
-        for (int[] tttList : getMyWinlist(r * 3 + c + 1)) {
+        for (int[] tttList : getMyWinList(r * 3 + c + 1)) {
             if(testWay(tttList)[CHESSMAN_O] == 2) {
                 return true;
             }
@@ -142,7 +142,7 @@ public class ChessBoard {
     //对TestToWin.testToWin()和TestToBlock.testToBlock()进行重构
     public boolean whoToWin(int r, int c, int chessMan){
 
-        for (int[] tttList : getMyWinlist(r * 3 + c + 1)) {
+        for (int[] tttList : getMyWinList(r * 3 + c + 1)) {
             if(testWay(tttList)[chessMan] == 2) {
                 return true;
             }
