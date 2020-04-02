@@ -4,6 +4,8 @@ import com.testthree2.v1.refactored.java.ChessBoard;
 import com.testthree2.v1.refactored.java.ComputerPlayer;
 import com.testthree2.v1.refactored.java.Player;
 
+import java.util.Scanner;
+
 public class GameSystem {
 
     private boolean exitFlag;//退出标志
@@ -11,6 +13,7 @@ public class GameSystem {
     private ComputerPlayer cp;//电脑玩家
     private Player player;  //玩家
     private int numMoves;   //回合
+    private int modeFlag;
 
     public GameSystem(){
         this.exitFlag = false;
@@ -22,7 +25,19 @@ public class GameSystem {
 
     //对应GameDriver.gameDriver()
     public void start(){
+        System.out.println("Welcome!");
+        modeFlag=chooseMode();
+        if(modeFlag==1){
+            pVe();
+        }
+        else if (modeFlag==2){
+            //pVp()
+        }
 
+
+    }
+
+    public void pVe(){
         cb.printMat();
         System.out.println("\nEnter position like \"r,c\" to move,or \"exit\" to exit");
 
@@ -52,6 +67,21 @@ public class GameSystem {
 
             }
         }
+    }
+
+
+    public int chooseMode(){
+        System.out.println("Please choose moode!");
+        System.out.println("1:PVE  2:PVP");
+        Scanner input = new Scanner(System.in);
+        String content = input.next();
+        if ("1".equals(content)){
+            return 1;
+        }
+        else if ("2".equals(content)){
+            return 2;
+        }
+        return 3;
     }
 
 

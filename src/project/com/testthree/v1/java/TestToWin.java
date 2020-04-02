@@ -15,13 +15,15 @@ public class TestToWin {
                     .stream(list)
                     .boxed()
                     .collect(Collectors.toList())
-                    .contains(cellN))
+                    .contains(cellN)) {
                 myWinList.add(list);
+            }
             for (int[] tttList : myWinList) {
                 int numX = TestWayAndWin.testWay(tttList)[0];
                 int numO = TestWayAndWin.testWay(tttList)[1];
-                if(numX == 2)
+                if(numX == 2) {
                     return true;
+                }
             }
         }
         return false;

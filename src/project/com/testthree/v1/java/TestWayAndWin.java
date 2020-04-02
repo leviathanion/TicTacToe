@@ -36,14 +36,16 @@ public class TestWayAndWin {
                     .stream(list)
                     .boxed()
                     .collect(Collectors.toList())
-                    .contains(cellN))
+                    .contains(cellN)) {
                 myWinList.add(list);
+            }
         }
         for (int[] tttList : myWinList) {
             int numX = testWay(tttList)[0];
             int numO = testWay(tttList)[1];
-            if(numX == 3 || numO == 3)
+            if(numX == 3 || numO == 3) {
                 return true;
+            }
         }
         return false;
     }

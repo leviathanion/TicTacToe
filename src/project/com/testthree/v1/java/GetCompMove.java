@@ -16,15 +16,16 @@ public class GetCompMove {
     public static int[] getCompMove(int numMoves,int oppCell) {
 
         //如果这是第3步，且对手第2步下在边上，就下在中央
-        if(3==numMoves)
+        if(3==numMoves) {
             if(2==oppCell||4==oppCell||6==oppCell||8==oppCell) {
                 getComMoveResult[0]=1;
                 getComMoveResult[1]=1;
                 return getComMoveResult;
             }
+        }
 
         //生成一个包含所有空单元格的数组
-        for	(int j=0;j<3;j++)
+        for	(int j=0;j<3;j++) {
             for(int i=0;i<3;i++) {
                 if(GameDriver.mat[i][j]==0) {
                     cell[0]=i;
@@ -32,6 +33,7 @@ public class GetCompMove {
                     cellList.add(cell);
                 }
             }
+        }
 
         //检查每个单元格，看它能否让我方立即获胜
         for(int i=0;i<cellList.size();i++) {
