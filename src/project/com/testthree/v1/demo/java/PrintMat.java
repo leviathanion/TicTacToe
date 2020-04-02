@@ -5,7 +5,7 @@ public class PrintMat {
 
     public void printMat(){
         //board_mat=com.testthree.java.GameDriver.mat;
-        System.out.println("  1 2 3");
+        System.out.print("  1 2 3\n");
         for(int i = 0; i < 3; i++){
             for(int j = 0; j < 3; j++){
                 if(GameDriver.mat[i][j]==0){
