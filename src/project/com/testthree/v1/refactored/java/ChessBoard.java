@@ -9,10 +9,12 @@ import java.util.stream.Collectors;
 import static com.testthree.v1.refactored.java.Constants.*;
 
 public class ChessBoard {
-
-    private int[][] mat;//棋盘矩阵，空为0，X为1，O为2
-    private int row,col;//记录上一步棋
-    private static final int[][] WIN_LIST ={{1,2,3},{4,5,6},{7,8,9},{1,4,7},{2,5,8},{3,6,9},{1,5,9},{3,5,7}};   //这个是常量，忽略代码规范提示即可
+    /** 棋盘矩阵，空为0，X为1，O为2 */
+    private int[][] mat;
+    /** 记录上一步棋 */
+    private int row,col;
+    /** 获胜序列常量 */
+    private static final int[][] WIN_LIST ={{1,2,3},{4,5,6},{7,8,9},{1,4,7},{2,5,8},{3,6,9},{1,5,9},{3,5,7}};
     private int three=3;
 
     public ChessBoard(){
@@ -79,14 +81,15 @@ public class ChessBoard {
     }
 
     /**
-     *  对应TestWayAndWin.testWin()
+     * @return 是否获胜
+     * @description 计算上次落点后能否获胜
      */
     public boolean testAnyOneWin(){
-        int cellN = row * 3 + col + 1; //格子号
-        /*  1 2 3
+        /*  格子号，依次为
+            1 2 3
             4 5 6
             7 8 9   */
-
+        int cellN = row * 3 + col + 1;
         for (int[] tttList : getMyWinlist(cellN)) {
             int numX = testWay(tttList)[CHESSMAN_X];
             int numO = testWay(tttList)[CHESSMAN_O];
@@ -97,7 +100,11 @@ public class ChessBoard {
         return false;
     }
 
-    //从TestWayAndWin.testWin()中提取出来
+    /**
+     * @param cellN 某点的格子号
+     * @return 包含该点的获胜序列
+     * @description 通过给定某点格子号，求得包含该点的获胜序列
+     */
     public List<int[]> getMyWinlist(int cellN){
         List <int[]> myWinlist = new ArrayList<>();
         for(int[] list : WIN_LIST){
@@ -143,7 +150,12 @@ public class ChessBoard {
         return false;
     }
 
-    //对应TestWayAndWin.testWay()
+    /**
+     * @author zhuquntao
+     * @param tttList 待测数组
+     * @return 待测数组中各个棋子的个数
+     * @Description 计算某数组中各个棋子的个数
+     */
     public int[] testWay(int[] tttList){
         List<Integer> lettersList = new ArrayList<Integer>();
         for(int cellN : tttList){
