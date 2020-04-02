@@ -15,8 +15,8 @@ public class GetMove {
     public int[] getMove() {
         while (true) {
             String input = GetInput.getInput();
-            String[] content_list = input.split(",");
-            if (content_list.length >= 1 && content_list[0].equals("exit"))  //输入为exit
+            String[] contentList = input.split(",");
+            if (contentList.length >= 1 && "exit".equals(contentList[0]))  //输入为exit
             {
                 System.out.println("Bye now");
                 result[0] = 1;  //result[0]表示退出标志
@@ -29,8 +29,8 @@ public class GetMove {
                 System.out.println("Use row,col.Re-enter");
             }
             else {
-                r = Integer.parseInt(content_list[0]) - 1;    //字符串到整形转换
-                c = Integer.parseInt(content_list[1]) - 1;
+                r = Integer.parseInt(contentList[0]) - 1;    //字符串到整形转换
+                c = Integer.parseInt(contentList[1]) - 1;
                 if (CheckInput.checkInput(input) == 1) {
                     System.out.println("Out of range,Re-enter");
                 }

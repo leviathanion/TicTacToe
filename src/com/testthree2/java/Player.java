@@ -16,8 +16,8 @@ public class Player {
 
         while (true) {
             String input = this.getInput();
-            String[] content_list = input.split(",");
-            if (content_list.length >= 1 && content_list[0].equals("exit"))  //输入为exit
+            String[] contentList = input.split(",");
+            if (contentList.length >= 1 && "exit".equals(contentList[0]))  //输入为exit
             {
                 System.out.println("Bye now");
                 return true;
@@ -56,13 +56,13 @@ public class Player {
 
     //对应CheckInput.checkInput()
     public int checkInput(String input){
-        String[] content_list = input.split(",");
-        if(content_list.length!=2){
+        String[] contentList = input.split(",");
+        if(contentList.length!=2){
             return 0;      //位数不对
         }
         else {
-            row = Integer.parseInt(content_list[0])-1;    //字符串到整形转换
-            col = Integer.parseInt(content_list[1])-1;
+            row = Integer.parseInt(contentList[0])-1;    //字符串到整形转换
+            col = Integer.parseInt(contentList[1])-1;
             if (row<0||row>=3||col<0||col>=3){
                 return 1; //越界
             }
