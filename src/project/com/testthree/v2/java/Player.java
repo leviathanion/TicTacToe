@@ -1,6 +1,6 @@
 package com.testthree.v2.java;
 
-import com.testthree.v1.refactored.java.ChessBoard;
+import com.testthree.v2.java.ChessBoard;
 
 import java.util.Scanner;
 
@@ -12,6 +12,8 @@ public class Player {
     public Player(){
         this.chessMan = 2;//玩家棋子默认为O
     }
+
+    public Player(int chessMan) { this.chessMan = chessMan; }
 
     //对应GetMove.getMove()
     public boolean move(ChessBoard cb){
@@ -37,7 +39,7 @@ public class Player {
                     System.out.println("Occupied,re-enter");
                 }
                 else {
-                    cb.changeMat(row, col, 2);
+                    cb.changeMat(row, col, chessMan);
                     cb.printMat();
                     break;
                 }

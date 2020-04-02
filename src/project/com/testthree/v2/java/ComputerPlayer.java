@@ -1,6 +1,6 @@
 package com.testthree.v2.java;
 
-import com.testthree.v1.refactored.java.ChessBoard;
+import com.testthree.v2.java.ChessBoard;
 
 import java.util.ArrayList;
 
