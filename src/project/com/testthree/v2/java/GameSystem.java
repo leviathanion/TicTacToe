@@ -8,23 +8,27 @@ import java.util.Scanner;
 
 import static com.testthree.v2.java.Constants.CHESSMAN_X;
 
+/**
+ * @author 123
+ */
 public class GameSystem {
-
+    /**退出标志*/
     private boolean exitFlag;
-    //退出标志
+    /**棋盘*/
     private ChessBoard cb;
-    //棋盘
+    /**电脑玩家*/
     private ComputerPlayer cp;
-    //电脑玩家
     private Player defaultPlayer;
     private Player extraPlayer;
-    //玩家
+
+    /**回合*/
     private int numMoves;
-    //回合
+
     private int modeFlag;
-    private static final int pveFlag = 1;
-    private static final int pvpFlag = 2;
-    private static final int quitFlag=3;
+    private static final int PVE_FLAG = 1;
+    private static final int PVP_FLAG = 2;
+    private static final int QUIT_FLAG=3;
+    private static final int EXCEPTION_FLAG=4;
     String pveOption="1";
     String pvpOption="2";
     String exitOption="3";
@@ -43,7 +47,7 @@ public class GameSystem {
             System.out.println("Please choose mode!");
             System.out.println("1:PVE  2:PVP  3:EXIT");
             modeFlag=chooseMode();
-            if(modeFlag==pveFlag){
+            if(modeFlag==PVE_FLAG){
                 this.cp = new ComputerPlayer();
                 pVe();
                 this.exitFlag = false;
@@ -51,7 +55,7 @@ public class GameSystem {
                 this.defaultPlayer = new Player();
                 this.numMoves = 0;
             }
-            else if (modeFlag==pvpFlag){
+            else if (modeFlag==PVP_FLAG){
                 this.extraPlayer = new Player(CHESSMAN_X);
                 pVp();
                 this.exitFlag = false;
@@ -60,7 +64,7 @@ public class GameSystem {
                 this.numMoves = 0;
 
             }
-            else if (modeFlag==quitFlag){
+            else if (modeFlag==QUIT_FLAG){
                 break;
             }
         }
@@ -140,15 +144,19 @@ public class GameSystem {
             Scanner input = new Scanner(System.in);
             String content = input.next();
             if (pveOption.equals(content)){
-                return pveFlag;
+                return PVE_FLAG;
             }
             else if (pvpOption.equals(content)){
-                return pvpFlag;
+                return PVP_FLAG;
             }
             else if (exitOption.equals(content)){
-                return quitFlag;
+                return QUIT_FLAG;
             }
-            System.out.println("Input error!\nPlease re-enter\n");
+            else{
+                System.out.println("Input error!\nPlease re-enter\n");
+                return EXCEPTION_FLAG;
+            }
+
         }
 
     }
