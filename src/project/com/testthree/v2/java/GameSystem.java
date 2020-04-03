@@ -116,7 +116,7 @@ public class GameSystem {
                 break;
             }
             if (numMoves % 2 > 0){
-                System.out.println("\n It's turn to X!");
+                System.out.println("\nIt's turn to X!");
                 //玩家一移动
                 exitFlag = extraPlayer.move(cb);
 
@@ -126,7 +126,7 @@ public class GameSystem {
                 }
             }
             else if (numMoves % 2 == 0){
-                System.out.println("\n It's turn to O!");
+                System.out.println("\nIt's turn to O!");
                 //玩家一移动
                 exitFlag = defaultPlayer.move(cb);
 
@@ -145,16 +145,20 @@ public class GameSystem {
             String content = input.next();
             if (pveOption.equals(content)){
                 return PVE_FLAG;
+                //1
             }
             else if (pvpOption.equals(content)){
                 return PVP_FLAG;
+                //2
             }
             else if (exitOption.equals(content)){
                 return QUIT_FLAG;
+                //3
             }
             else{
                 System.out.println("Input error!\nPlease re-enter\n");
                 return EXCEPTION_FLAG;
+                //4
             }
 
         }
