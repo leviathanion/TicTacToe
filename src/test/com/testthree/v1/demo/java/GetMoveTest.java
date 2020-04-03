@@ -34,6 +34,10 @@ public class GetMoveTest {
     }
 
 
+    public void tearDown() throws Exception {
+        GameDriver.mat= new int[][]{{0, 0, 0}, {0, 0, 0}, {0, 0, 0}};
+    }
+
     @Test
     public void getMove() {
         GetMove gm=new GetMove();
