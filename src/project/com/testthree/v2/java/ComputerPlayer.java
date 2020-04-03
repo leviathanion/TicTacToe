@@ -5,17 +5,24 @@ import com.testthree.v2.java.ChessBoard;
 import java.util.ArrayList;
 
 public class ComputerPlayer {
-
-    private int chessMan;//棋子类型，1为X，2为O
-    private static final int[] PREFIX=new int[] {1,9,3,7,5,2,4,6,8}; //电脑优先落子顺序
+    /**棋子类型，1为X，2为O*/
+    private int chessMan;
+    /**电脑优先落子顺序*/
+    private static final int[] PREFIX=new int[] {1,9,3,7,5,2,4,6,8};
 
     public ComputerPlayer(){
         this.chessMan = 1;//电脑玩家棋子默认为X
     }
 
-    //对应GetCompMove.getCompMove()
+    /**
+     * @author  xucheng
+     * @param numMoves  下棋的步数
+     * @param oppCell   棋子所对应的网格号
+     * @param cb        棋盘对象
+     * @description     依据玩家下棋的坐标，按照一定的优先级下棋
+     */
     public void move(int numMoves, int oppCell, ChessBoard cb){
-        ArrayList<int[]> cellList=new ArrayList<>();
+        ArrayList<int[]> cellList=new ArrayList<>();    //用于存储空单元格
 
         //如果这是第3步，且对手第2步下在边上，就下在中央
         if(3 == numMoves) {

@@ -6,13 +6,13 @@ package com.testthree.v1.demo.java;
  * @date 2020.3.31
  */
 public class PrintMat {
-    private static int MAXM=3;
+    private static final int MAXIM=3;
 
     public void printMat(){
         /**打印棋盘*/
         System.out.print("  1 2 3\n");
-        for(int i = 0; i < MAXM; i++){
-            for(int j = 0; j < MAXM; j++){
+        for(int i = 0; i < MAXIM; i++){
+            for(int j = 0; j < MAXIM; j++){
                 if(GameDriver.mat[i][j]==0){
                     if(j==0){
                         if(i==0){

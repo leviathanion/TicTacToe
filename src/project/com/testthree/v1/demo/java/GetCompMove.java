@@ -1,6 +1,12 @@
 package com.testthree.v1.demo.java;
 
 import java.util.ArrayList;
+
+/**
+ * @author xucheng
+ * @version 1.0
+ * @date 2020.3.31
+ */
 public class GetCompMove {
     private static int[] getComMoveResult=new int[2];	//该返回的坐标
     private static int[] cell=new int[2];		//用于遍历cellList的数组
@@ -8,10 +14,17 @@ public class GetCompMove {
     private static int[] prefix=new int[] {1,9,3,7,5,2,4,6,8}; //电脑优先落子顺序
 
     /**
-     *
-     * @param numMoves
-     * @param oppCell
-     * @return getComMoveResult
+     * @param numMoves 棋的步数
+     * @param oppCell   下棋的网格号
+     * @return getComMoveResult 电脑最终下棋的坐标
+     * @description 棋盘对应网格号依次为：
+     *                                  1   2   3
+     *                                  4   5   6
+     *                                  7   8   9
+     *               电脑先检测第三步，若中间网格未被占据，则占据中间网格
+     *               再看能让自己获胜的情况，若能获胜则占据
+     *               再看能让玩家获胜的情况，若能让玩家获胜则占据对应网格
+     *               再按照prefix数组中对应的网格号的优先级下棋
      */
     public static int[] getCompMove(int numMoves,int oppCell) {
 

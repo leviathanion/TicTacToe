@@ -1,7 +1,6 @@
 package com.testthree.v1.demo.java;
 
 import static org.junit.Assert.assertArrayEquals;
-import static org.junit.Assert.assertEquals;
 
 import java.util.Arrays;
 import java.util.Collection;
@@ -12,10 +11,6 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 
-/**
- * @author Administrator
- *
- */
 @RunWith(Parameterized.class)
 public class GetComMoveTest {	
 	private int numMoves;
@@ -25,10 +20,10 @@ public class GetComMoveTest {
 	
 	/**
 	 * 
-	 * @param numMoves
-	 * @param oppCell
-	 * @param map
-	 * @param expectedResultArray
+	 * @param numMoves	下棋步数
+	 * @param oppCell	网格号
+	 * @param map		地图
+	 * @param expectedResultArray	预期输出
 	 */
 	public GetComMoveTest(int numMoves,int oppCell,int[][] map,int[] expectedResultArray) {
 		// TODO Auto-generated constructor stub
@@ -47,11 +42,11 @@ public class GetComMoveTest {
 	                        {3, 4, new int[][]{{1, 0, 0}, {2, 0, 0}, {0, 0, 0}}, new int[]{1,1}},
 	                        {3, 6, new int[][]{{1, 0, 0}, {0, 0, 2}, {0, 0, 0}}, new int[]{1,1}},
 	                        {3, 8, new int[][]{{1, 0, 0}, {0, 0, 0}, {0, 2, 0}}, new int[]{1,1}},
-	                        //第二步玩家下在四角，且为3号位的情况
-	                        {3, 3, new int[][]{{1, 0, 2}, {0, 0, 0}, {0, 0, 0}}, new int[]{2,2}},
-	                        //第二步玩家下在四角，但不是3号位的情况
-	                        {3, 7, new int[][]{{1, 0, 0}, {0, 0, 0}, {2, 0, 0}}, new int[]{2,2}},
+	                        //第二步玩家下在四角，且为9号位的情况
 	                        {3, 9, new int[][]{{1, 0, 0}, {0, 0, 0}, {0, 0, 2}}, new int[]{0,2}},
+	                        //第二步玩家下在四角，但不是9号位的情况
+	                        {3, 7, new int[][]{{1, 0, 0}, {0, 0, 0}, {2, 0, 0}}, new int[]{2,2}},
+	                        {3, 3, new int[][]{{1, 0, 2}, {0, 0, 0}, {0, 0, 0}}, new int[]{2,2}},
 	                        //第二步玩家下在中央的情况
 	                        {3, 5, new int[][]{{1, 0, 0}, {0, 2, 0}, {0, 0, 0}}, new int[]{2,2}},
 	                        //电脑有机会获胜的情况

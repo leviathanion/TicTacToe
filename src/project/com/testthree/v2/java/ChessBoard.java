@@ -15,7 +15,7 @@ public class ChessBoard {
     private int row,col;
     /** 获胜序列常量 */
     private static final int[][] WIN_LIST ={{1,2,3},{4,5,6},{7,8,9},{1,4,7},{2,5,8},{3,6,9},{1,5,9},{3,5,7}};
-    private int MAXM=3;
+    private static final int MAXIM=3;
 
     public ChessBoard(){
         this.mat = new int[][]{{0, 0, 0}, {0, 0, 0}, {0, 0, 0}};
@@ -26,8 +26,8 @@ public class ChessBoard {
     /**对应PrintMat.printMat()*/
     public void printMat(){
         System.out.println("  1 2 3");
-        for(int i = 0; i < MAXM; i++){
-            for(int j = 0; j < MAXM; j++){
+        for(int i = 0; i < MAXIM; i++){
+            for(int j = 0; j < MAXIM; j++){
                 if(this.mat[i][j]==0){
                     if(j==0){
                         if(i==0){
