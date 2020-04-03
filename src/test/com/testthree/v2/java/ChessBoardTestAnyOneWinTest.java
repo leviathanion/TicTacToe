@@ -12,6 +12,12 @@ import java.util.Collection;
 
 import static org.junit.Assert.assertEquals;
 
+/**
+ * @author zhuquntao
+ * @version 1.0
+ * @date 2020.4.2
+ */
+
 @RunWith(Parameterized.class)
 public class ChessBoardTestAnyOneWinTest {
     static ChessBoard cb;

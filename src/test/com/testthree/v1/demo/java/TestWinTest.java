@@ -11,6 +11,13 @@ import java.util.Collection;
 
 import static org.junit.Assert.assertEquals;
 
+
+/**
+ * @author zhuquntao
+ * @version 1.0
+ * @date 2020.4.1
+ */
+
 @RunWith(Parameterized.class)
 public class TestWinTest {
     private int r,c;

@@ -10,6 +10,12 @@ import java.util.Collection;
 
 import static org.junit.Assert.*;
 
+/**
+ * @author zhuquntao
+ * @version 1.0
+ * @date 2020.4.2
+ */
+
 @RunWith(Parameterized.class)
 public class ChessBoardTestWayTest {
     private int[] tttList;
