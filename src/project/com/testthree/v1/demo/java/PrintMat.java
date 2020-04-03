@@ -1,13 +1,18 @@
 package com.testthree.v1.demo.java;
 
+/**
+ * @author JiangXianQiang
+ * @version 1.0
+ * @date 2020.3.31
+ */
 public class PrintMat {
-    //private int[][] board_mat;//棋盘矩阵
+    private static int MAXM=3;
 
     public void printMat(){
-        //board_mat=com.testthree.java.GameDriver.mat;
+        /**打印棋盘*/
         System.out.print("  1 2 3\n");
-        for(int i = 0; i < 3; i++){
-            for(int j = 0; j < 3; j++){
+        for(int i = 0; i < MAXM; i++){
+            for(int j = 0; j < MAXM; j++){
                 if(GameDriver.mat[i][j]==0){
                     if(j==0){
                         if(i==0){
