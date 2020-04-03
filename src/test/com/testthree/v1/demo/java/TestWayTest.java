@@ -10,6 +10,13 @@ import java.util.Arrays;
 import java.util.Collection;
 
 import static org.junit.Assert.*;
+
+/**
+ * @author zhuquntao
+ * @version 1.0
+ * @date 2020.4.1
+ */
+
 @RunWith(Parameterized.class)
 public class TestWayTest {
     private int[] tttList;
