@@ -27,7 +27,8 @@ public class GetMoveTest {
     }
 
 
-    @Parameterized.Parameters/**构造测试用例*/
+    @Parameterized.Parameters
+    /**构造测试用例*/
     public static Collection data(){
         return Arrays.asList(new Object[][]{{new int[] {1,0,0},"exit"},{new int[]{0,0,0},"1,1"},
                 {new int[]{0,1,0},"2,1"},{new int[]{0,1,1},"2,2"},{new int[]{0,2,2},"3,3"}});
@@ -36,6 +37,7 @@ public class GetMoveTest {
 
     public void tearDown() throws Exception {
         GameDriver.mat= new int[][]{{0, 0, 0}, {0, 0, 0}, {0, 0, 0}};
+        //清理mat
     }
 
     @Test
