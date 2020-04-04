@@ -1,17 +1,27 @@
 package com.testthree.v1.refactored.java;
 
 import java.util.Scanner;
-
+/**
+ * @author zhuoyongkang
+ * @version 1.1
+ * @date 2020.4.2
+ */
 public class Player {
-
-    private int chessMan;//棋子类型，1为X，2为O
-    private int row, col;//记录玩家的上一步
+    /**棋子类型，1为X，2为O*/
+    private int chessMan;
+    /**记录玩家的上一步*/
+    private int row, col;
 
     public Player(){
-        this.chessMan = 2;//玩家棋子默认为O
+        /**玩家棋子默认为O*/
+        this.chessMan = 2;
     }
 
-    //对应GetMove.getMove()
+    /**
+     * @param cb 玩家所使用的棋盘
+     * @return  退出标志
+     * @Description 对应GetMove.getMove()
+     */
     public boolean move(ChessBoard cb){
 
         while (true) {
@@ -46,7 +56,10 @@ public class Player {
         return false;
     }
 
-    //对应GetInput.getInput()
+    /**
+     * @return 获取输入
+     * 对应GetInput.getInput()
+     */
     public String getInput(){
         System.out.print("\nEnter move or  \"exit\" :");
         Scanner input = new Scanner(System.in);
@@ -54,7 +67,11 @@ public class Player {
         return content;
     }
 
-    //对应CheckInput.checkInput()
+    /**
+     * @param input 需要检查的字符串
+     * @return 检查类型
+     * 对应CheckInput.checkInput()
+     */
     public int checkInput(String input){
         String[] contentList = input.split(",");
         if(contentList.length!=2){

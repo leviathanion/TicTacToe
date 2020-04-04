@@ -7,7 +7,11 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import static com.testthree.v1.refactored.java.Constants.*;
-
+/**
+ * @author zhuoyongkang
+ * @version 1.1
+ * @date 2020.4.2
+ */
 public class ChessBoard {
     /** 棋盘矩阵，空为0，X为1，O为2 */
     private int[][] mat;

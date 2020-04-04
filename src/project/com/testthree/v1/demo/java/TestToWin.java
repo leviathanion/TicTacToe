@@ -5,8 +5,18 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-
+/**
+ * @author zhuoyongkang
+ * @version 1.0
+ * @date 2020.3.31
+ */
 public class TestToWin {
+    /**
+     * @param r 行数
+     * @param c 列数
+     * @return 返回r,c位置是否能赢棋
+     * @Description 判断传入位置落子能否取得胜利
+     */
     public static boolean testToWin(int r, int c){
         int cellN = r * 3 + c + 1; //格子号
         List <int[]> myWinList = new ArrayList<>();

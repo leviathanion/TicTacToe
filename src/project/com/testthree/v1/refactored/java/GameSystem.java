@@ -1,12 +1,20 @@
 package com.testthree.v1.refactored.java;
-
+/**
+ * @author zhuoyongkang
+ * @version 1.1
+ * @date 2020.4.2
+ */
 public class GameSystem {
-
-    private boolean exitFlag;//退出标志
-    private ChessBoard cb;  //棋盘
-    private ComputerPlayer cp;//电脑玩家
-    private Player player;  //玩家
-    private int numMoves;   //回合
+    /**退出标志*/
+    private boolean exitFlag;
+    /**棋盘*/
+    private ChessBoard cb;
+    /**电脑玩家*/
+    private ComputerPlayer cp;
+    /**玩家*/
+    private Player player;
+    /**回合数*/
+    private int numMoves;
 
     public GameSystem(){
         this.exitFlag = false;
@@ -16,7 +24,9 @@ public class GameSystem {
         this.numMoves = 0;
     }
 
-    //对应GameDriver.gameDriver()
+    /**
+     * 对应GameDriver.gameDriver()
+     */
     public void start(){
 
         cb.printMat();

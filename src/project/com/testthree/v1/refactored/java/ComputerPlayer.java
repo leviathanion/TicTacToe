@@ -1,7 +1,11 @@
 package com.testthree.v1.refactored.java;
 
 import java.util.ArrayList;
-
+/**
+ * @author zhuoyongkang
+ * @version 1.1
+ * @date 2020.4.2
+ */
 public class ComputerPlayer {
     /**棋子类型，1为X，2为O*/
     private int chessMan;
