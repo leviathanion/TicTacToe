@@ -8,7 +8,7 @@ import java.util.ArrayList;
  * @date 2020.3.31
  */
 public class GetCompMove {
-    //**该返回的坐标*/
+    /**该返回的坐标*/
     private static int[] getComMoveResult=new int[2];
     /**电脑优先落子顺序*/
     private static int[] prefix=new int[] {1,9,3,7,5,2,4,6,8};
