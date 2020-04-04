@@ -18,7 +18,8 @@ public class TestToWin {
      * @Description 判断传入位置落子能否取得胜利
      */
     public static boolean testToWin(int r, int c){
-        int cellN = r * 3 + c + 1; //格子号
+        //格子号
+        int cellN = r * 3 + c + 1;
         List <int[]> myWinList = new ArrayList<>();
         for(int[] list : GameDriver.WINLIST){
             if(Arrays

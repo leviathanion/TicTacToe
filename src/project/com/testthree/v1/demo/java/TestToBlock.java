@@ -5,10 +5,21 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-
+/**
+ * @author taoyongxin
+ * @version 1.0
+ * @date 2020.3.31
+ */
 public class TestToBlock {
+    /**
+     * 判断传入位置落子能否使对方取得胜利
+     * @param r 行数
+     * @param c 列数
+     * @return 返回r,c位置是否能让对方赢棋
+     */
     public static boolean testToBlock(int r, int c){
-        int cellN = r * 3 + c + 1; //格子号
+        //格子号
+        int cellN = r * 3 + c + 1;
         List <int[]> myWinList = new ArrayList<>();
         for(int[] list : GameDriver.WINLIST){
             if(Arrays

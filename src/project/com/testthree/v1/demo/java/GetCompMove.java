@@ -8,10 +8,10 @@ import java.util.ArrayList;
  * @date 2020.3.31
  */
 public class GetCompMove {
-    private static int[] getComMoveResult=new int[2];	//该返回的坐标
-    private static int[] cell=new int[2];		//用于遍历cellList的数组
-    private static ArrayList<int[]>cellList=new ArrayList<>();	//棋盘上可落子的集合
-    private static int[] prefix=new int[] {1,9,3,7,5,2,4,6,8}; //电脑优先落子顺序
+    //**该返回的坐标*/
+    private static int[] getComMoveResult=new int[2];
+    /**电脑优先落子顺序*/
+    private static int[] prefix=new int[] {1,9,3,7,5,2,4,6,8};
 
     /**
      * @param numMoves 棋的步数
@@ -27,7 +27,7 @@ public class GetCompMove {
      *               再按照prefix数组中对应的网格号的优先级下棋
      */
     public static int[] getCompMove(int numMoves,int oppCell) {
-
+        ArrayList<int[]>cellList=new ArrayList<>();
         //如果这是第3步，且对手第2步下在边上，就下在中央
         if(3==numMoves) {
             if(2==oppCell||4==oppCell||6==oppCell||8==oppCell) {
@@ -41,9 +41,7 @@ public class GetCompMove {
         for	(int j=0;j<3;j++) {
             for(int i=0;i<3;i++) {
                 if(GameDriver.mat[i][j]==0) {
-                    cell[0]=i;
-                    cell[1]=j;
-                    cellList.add(cell);
+                    cellList.add(new int[]{i,j});
                 }
             }
         }

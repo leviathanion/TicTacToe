@@ -9,7 +9,7 @@ public class PrintMat {
     private static final int MAXIM=3;
 
     public void printMat(){
-        /**打印棋盘*/
+        //打印棋盘
         System.out.print("  1 2 3\n");
         for(int i = 0; i < MAXIM; i++){
             for(int j = 0; j < MAXIM; j++){
