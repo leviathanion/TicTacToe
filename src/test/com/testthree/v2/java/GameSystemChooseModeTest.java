@@ -12,20 +12,26 @@ import java.util.Collection;
 
 import static org.junit.Assert.*;
 
-
+/**
+ * @author caoxiuyuan
+ * @version 2.0
+ */
 @RunWith(Parameterized.class)
-public class GameSystemTest {
+public class GameSystemChooseModeTest {
+    /**定义参数*/
     private int expected;
     private String input;
+    private GameSystem gs;
 
-
-    public GameSystemTest(int expected, String input){
+    /**引入参数*/
+    public GameSystemChooseModeTest(int expected, String input){
+        this.gs=new GameSystem();
         this.expected = expected;
         this.input = input;
     }
 
     @Parameterized.Parameters
-    // 构造测试用例
+    // 构建测试数据集
     public static Collection data(){
         return Arrays.asList(new Object[][]{{1,"1"},{2,"2"},{3,"3"},{4,"exit"},{4,"123456"}});
     }
@@ -33,7 +39,6 @@ public class GameSystemTest {
 
     @Test
     public void chooseMode() {
-        GameSystem gs=new GameSystem();
         String data = this.input;
         InputStream stdin = System.in;
         System.setIn(new ByteArrayInputStream(data.getBytes()));
